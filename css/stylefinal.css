@@ -17,26 +17,33 @@ body {
   font-size: 18px;
   line-height: 1.2;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 h1 {
   font-size: 36px;
 }
+
 h2 {
   font-size: 28px;
 }
+
 p {
   margin: 20px 0px;
 }
+
 img {
   max-width: 100%;
 }
+
 main {
   max-width: 1200px;
   margin: auto;
 }
+
 section {
   padding: 16px;
   min-height: 100vh;
@@ -52,25 +59,78 @@ header {
   width: 100%;
   padding: 1rem;
   background-color: #cc9544;
-  position: sticky;
+  position: fixed;
 }
+
 .header__logo {
   max-width: 8.5rem;
 }
+
 .navbar {
-  display: flex;
-  gap: 1rem;
+  position: fixed;
   top: 0;
-  right: 0;
-  padding: 1rem;
+  left: 0;
+  width: 100%;
+  margin-left: -100%;
+  transition: all 0.3s linear;
+  background-color: rgba(0, 0, 0, 0.7);
 }
+
+.navbar.show {
+  margin-left: 0;
+}
+
 .navbar__list {
   display: flex;
+  flex-direction: column;
   font-size: 20px;
   list-style-type: none;
   padding: 2rem;
+  transition: 0.2s;
   color: #fff7d4;
-  gap: 3rem;
+  gap: 2rem;
+}
+
+.list__item {
+  margin-top: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button__menu {
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  background: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.button__menu span {
+  width: 37px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #361500;
+  border-radius: 3px;
+  transform-origin: 4px 0px;
+  transition: all 0.3s;
+}
+
+.button__menu.close span {
+  opacity: 1;
+  transform: rotate(45deg) translate(0px, 0px);
+  background: #ffffff;
+}
+
+.button__menu.close span:nth-child(2) {
+  transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+.button__menu.close span:nth-child(3) {
+  display: none;
 }
 
 /*Section Inicio*/
@@ -80,15 +140,19 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .logo__inicio {
   margin-bottom: 30px;
 }
+
 .logo__inicio img {
   width: 400px;
 }
+
 .box__inicio {
   text-align: center;
 }
+
 .titulo__inicio,
 .titulo__contacto,
 .parrafo__intro {
@@ -109,6 +173,7 @@ header {
   background-color: #603601;
   transition: 0.4s;
 }
+
 .active {
   background-color: #603601;
   border-radius: 10px;
@@ -119,15 +184,18 @@ header {
 #section__contacto {
   margin-top: 120px;
 }
+
 .box__contacto {
   text-align: center;
   background-color: rgba(204, 149, 68, 0.7);
   border-radius: 20px;
   padding: 20px;
 }
+
 .icono {
   width: 80px;
 }
+
 .box__redes {
   margin-top: 50px;
   display: flex;
@@ -148,17 +216,45 @@ footer .footer__letras {
 
 /*MEDIA QUERIES*/
 @media (min-width: 1024px) {
+  #buttonp {
+    display: none;
+  }
+
   body {
     background-image: url(../imagenes/fondo3.png);
     background-size: cover;
     background-position: center;
   }
+
   header {
     background-color: none;
+    height: 100%;
+    position: static;
   }
+
   .navbar {
-    justify-content: center;
+    position: static;
+    margin-left: 0;
+    flex-basis: 70%;
+    height: 100%;
   }
+
+  .navbar__list {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: #cc9544;
+  }
+
+  .navbar__item {
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 2rem;
+  }
+
   #section__inicio {
     display: flex;
     flex-direction: row;
@@ -166,15 +262,18 @@ footer .footer__letras {
     align-items: start;
     padding-top: 3rem;
   }
+
   .titulo__inicio {
     font-size: 48px;
   }
+
   .parrafo__intro {
     padding-left: 5rem;
     max-width: 45rem;
     text-align: justify;
     margin-left: 3rem;
   }
+
   .boton__inicio {
     margin-left: 31rem;
   }
@@ -182,35 +281,8 @@ footer .footer__letras {
   .titulo__contacto {
     font-size: 32px;
   }
+
   .box__contacto {
     max-width: 28rem;
   }
-
-  /*header {
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #361500;
-  box-shadow: 0 3px 8px -5px #5f5f5f;
-  position: sticky;
-  top: 0;
-}
-.header__logo {
-  width: 8rem;
-  margin-top: 0.3rem;
-  margin-left: 0.5rem;
-}
-.navbar__list {
-  display: flex;
-  font-size: 20px;
-  list-style-type: none;
-}
-.navbar__list li a {
-  padding: 2rem;
-}
-.navbar__item {
-  color: #fff7d4;
-}*/
 }
