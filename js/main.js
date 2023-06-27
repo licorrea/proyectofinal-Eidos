@@ -1,7 +1,17 @@
-const navbar = document.QuerySelector("#navbar");
-const abrir = document.QuerySelector("#abrir");
-const cerrar = document.QuerySelector("#cerrar");
+const navbarItem = document.querySelectorAll(".navbar__item");
+navbarItem.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    const currentItem = document.querySelector(".active");
+    currentItem.classList.remove("active");
+    e.target.classList.add("active");
+  });
+});
 
-abrir.addEventListener("click", () => {
-  navbar.classList.add("visible");
+const botonInicio = document.querySelectorAll(".boton__inicio");
+botonInicio.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    const currentItem = document.querySelector(".active");
+    currentItem.classList.remove("active");
+    e.target.classList.add("active");
+  });
 });
