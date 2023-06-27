@@ -58,32 +58,19 @@ header {
   max-width: 8.5rem;
 }
 .navbar {
-  opacity: 0;
-  visibility: hidden;
-
   display: flex;
-  flex-direction: column;
-  align-items: end;
-  position: absolute;
   gap: 1rem;
   top: 0;
   right: 0;
-  background-color: #361500;
   padding: 1rem;
-}
-.navbar.visible {
-  opacity: 1;
-  visibility: visible;
 }
 .navbar__list {
   display: flex;
-  flex-direction: column;
-  align-items: end;
   font-size: 20px;
   list-style-type: none;
   padding: 2rem;
   color: #fff7d4;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 /*Section Inicio*/
