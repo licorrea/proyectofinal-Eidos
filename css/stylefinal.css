@@ -40,6 +40,7 @@ img {
 }
 
 main {
+  width: 100%;
   max-width: 1200px;
   margin: auto;
 }
@@ -215,21 +216,10 @@ footer .footer__letras {
 }
 
 /*MEDIA QUERIES*/
-@media (min-width: 1024px) {
-  #buttonp {
+
+@media (min-width: 786px) {
+  #button__nav {
     display: none;
-  }
-
-  body {
-    background-image: url(../imagenes/fondo3.png);
-    background-size: cover;
-    background-position: center;
-  }
-
-  header {
-    background-color: none;
-    height: 100%;
-    position: static;
   }
 
   .navbar {
@@ -253,6 +243,23 @@ footer .footer__letras {
     display: inline-block;
     margin-top: 0;
     margin-right: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #button__nav {
+    display: none;
+  }
+
+  body {
+    background-image: url(../imagenes/fondo3.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  header {
+    position: sticky;
+    top: 0px;
   }
 
   #section__inicio {

@@ -1,3 +1,5 @@
+// ACTIVAR BOTONES AL PRESIONAR
+
 const navbarItem = document.querySelectorAll(".navbar__item");
 navbarItem.forEach(function (item) {
   item.addEventListener("click", function (e) {
@@ -18,7 +20,7 @@ botonInicio.forEach(function (item) {
 
 // MENU HAMBURGUESA
 
-const toggleButton = document.getElementById("buttonp");
+const toggleButton = document.getElementById("button__nav");
 const navWrapper = document.getElementById("nav");
 
 toggleButton.addEventListener("click", () => {
